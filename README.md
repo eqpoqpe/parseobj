@@ -10,7 +10,7 @@ npm install @eqpoqpe/parseobj
 ```ts
 const data: string = `---
 name: Ryan Martin
-email: l_.ll@hotmail.com
+description: 🎉
 ---
 This is the content of the object.
 It can span multiple lines.
