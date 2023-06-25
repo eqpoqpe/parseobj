@@ -1,21 +1,29 @@
 const data = `---
 name: Ryan Martin
 email: l_.ll@hotmail.com
----`;
+---
+This is the content of the object.
+It can span multiple lines.
+`;
 
 const parsedObject = {};
 const lines = data.split('\n');
-let currentKey = '';
+let isContent = false;
+let content = '';
+
 lines.forEach(line => {
-  if (line.startsWith('---')) {
+  if (line.startsWith('---') && !isContent) {
+    isContent = true;
     return;
+  }
+
+  if (isContent) {
+    content += line + '\n';
   } else if (line.includes(':')) {
     const [key, value] = line.split(':').map(part => part.trim());
-    currentKey = key;
     parsedObject[key] = value;
-  } else if (currentKey && line.trim() !== '') {
-    parsedObject[currentKey] += `\n${line.trim()}`;
   }
 });
 
+parsedObject.content = content.trim();
 console.log(parsedObject);
