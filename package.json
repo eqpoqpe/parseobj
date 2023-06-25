@@ -1,0 +1,11 @@
+{
+  "name": "parseobj",
+  "version": "0.0.1",
+  "description": "(md) => obj",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryan Martin",
+  "license": "MIT"
+}
